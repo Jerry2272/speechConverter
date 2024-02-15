@@ -1,0 +1,77 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    background: radial-gradient(rgb(184, 134, 11),rgb(2, 29, 38));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px ;
+}
+.container h1{
+    font-weight: 500;
+    font-size: 42px;
+    color: #fff ;
+}
+.container p{
+    color: #fff;
+    font-size: 18px;
+
+}
+.container .inputSide{
+    width: 400px;
+    margin: auto;
+    text-align: center;
+}
+.container select{
+    border: 1px solid #fff ;
+    background: transparent;
+    color: rgb(80, 58, 4);
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 2px;
+    margin-bottom: 20px;
+}
+.container .btn{
+    display: flex;
+}
+.container button {
+    background:  radial-gradient(rgb(184, 134, 11),rgb(2, 29, 38));
+    padding: 8px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 20px;
+    font-size: 14px;
+}
+.container textarea{
+    background: radial-gradient(rgb(46, 45, 40),rgb(137, 145, 147));
+    font-weight: 600;
+    width: 100%;
+    color: #fff;
+    border-radius: 10px;
+    outline: none;
+    margin: 30px auto;
+    padding-left: 10px;padding-top: 10px;
+}
+.container textarea::placeholder{
+    color: #fff;
+
+}
+
+
+
+@media (max-width: 568px) {
+    .container .inputSide{
+        width: auto;
+        margin: auto;
+        text-align: center;
+    }
+}
