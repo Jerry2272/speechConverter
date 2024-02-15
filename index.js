@@ -1,8 +1,9 @@
 const button = document.querySelector('#listen');
 const pause = document.querySelector('#pause');
-const play = document.querySelector('#play');
+const resume = document.querySelector('#resume');
 const cancel = document.querySelector('#cancel');
 const deleteButton = document.querySelector('#delete');
+const pitchSlider = document.querySelector('#pitch-slider');
 const speakTheText = new SpeechSynthesisUtterance;
 
 // declaring the voice selected 
@@ -32,7 +33,7 @@ window.speechSynthesis.speak(speakTheText);
 pause.addEventListener('click',()=>{
     window.speechSynthesis.pause(speakTheText)
 });
-play.addEventListener('click',()=>{
+resume.addEventListener('click',()=>{
     window.speechSynthesis.resume(speakTheText);
 })
 cancel.addEventListener('click',()=>{
@@ -44,4 +45,8 @@ deleteButton.addEventListener('click', () => {
     if (text.value) {
         text.value = '';
     }
+});
+pitchSlider.addEventListener('input', () => {
+    const pitchValue = parseFloat(pitchSlider.value);
+    speakTheText.pitch = pitchValue;
 });
