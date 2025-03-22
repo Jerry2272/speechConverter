@@ -3,53 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speech Converter</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="font-awe/all.min.css">
-    <title>Text Speech</title>
 </head>
 <body>
     <div class="container">
         <div class="content">
-           <h1>Text Converter Into Voice Speech</h1>
-           <p>You can now paste in your text here to listen.</p>
-           <div class="inputSide">
-            <textarea name="" id="text-to-speech" cols="30" rows="10" placeholder="Write/Paste in any Text"></textarea>
-            <div class="di">
-              <select name="" id=""></select>
-              <button id="listen" title="Listen To Speech">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polygon points="12 16 8 12 12 8 12 16"></polygon>
-                </svg>
+           <h1>Text to Speech Converter</h1>
+           <p>Paste or write text below and listen to it.</p>
+           
+           <div class="input-section">
+                <textarea id="text-to-speech" placeholder="Enter your text here..."></textarea>
                 
-              </button>
-              <div class="btn">
-                <button id="pause" title="Pause Speech"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="6" y="4" width="4" height="16"></rect>
-                  <rect x="14" y="4" width="4" height="16"></rect>
-                </svg>
-                </button>
-                <button id="resume" title="Resume Speech"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                </svg>
-                </button>
-                <button id="cancel" title="Cancel Text/ Stop Speech"> 
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                  </svg>
-                  
-                </button>
-                <button id="delete" title="Delete Text">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="3 6 5 6 21 6"></polyline>
-                    <path d="M19 6V19a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6M3 6L21 6"></path>
-                  </svg>
-                  
-                </button>
-              </div>
-               <input id="pitch-slider"  type="range" min="1.1" max="6" step="0.1" value="1" style="width: 100%; height: 2px; cursor: pointer; background:  radial-gradient(rgb(184, 134, 11),rgb(2, 29, 38));" />
-            </div>
+                <select id="voice-select"></select>
+
+                <div class="controls">
+                    <button id="listen" title="Listen">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polygon points="12 16 8 12 12 8 12 16"></polygon>
+                      </svg>
+                    </button>
+                    <button id="pause" title="Pause">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="6" y="4" width="4" height="16"></rect>
+                        <rect x="14" y="4" width="4" height="16"></rect>
+                      </svg>
+                    </button>
+                    <button id="resume" title="Resume">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                      </svg>
+                    </button>
+                    <button id="cancel" title="Stop">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                      </svg>
+                    </button>
+                    <button id="delete" title="Clear">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="3 6 5 6 21 6"></polyline>
+                        <path d="M19 6V19a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6M3 6L21 6"></path>
+                      </svg>
+                    </button>
+                </div>
+
+                <label for="pitch-slider">Pitch</label>
+                <input id="pitch-slider" type="range" min="0.5" max="2" step="0.1" value="1">
            </div>
         </div>
     </div>
